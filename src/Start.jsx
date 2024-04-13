@@ -34,7 +34,7 @@ const Start = () => {
         let ar = []
         bookLocation?.forEach((element, index) => {
             console.log('Element at index ' + index + ': ' + element);
-            fetch(`http://api.weatherapi.com/v1/forecast.json?key=2746d2000dbe4f92bc7180151240904&q=${element}`,
+            fetch(`https://api.weatherapi.com/v1/forecast.json?key=2746d2000dbe4f92bc7180151240904&q=${element}`,
                 {
                     method: "GET"
                 })
@@ -48,7 +48,7 @@ const Start = () => {
     useEffect(() => {
 
         const f = () => {
-            fetch(`http://api.weatherapi.com/v1/forecast.json?key=2746d2000dbe4f92bc7180151240904&q=${selectedLocation}&days=7`,
+            fetch(`https://api.weatherapi.com/v1/forecast.json?key=2746d2000dbe4f92bc7180151240904&q=${selectedLocation}&days=7`,
                 {
                     method: "GET"
                 })
@@ -77,10 +77,11 @@ const Start = () => {
 
         
         const formattedDate = sevenDaysAgo.toISOString().split('T')[0];
+ 
 
         // console.log(`my fetch data: http://api.weatherapi.com/v1/history.json?key=2746d2000dbe4f92bc7180151240904&q=${selectedLocation}&dt=${formattedDate}&end_dt=${tomorrowFormattedDate  }`); // Output: yyyy-mm-dd
         const fe = () => {
-            fetch(`http://api.weatherapi.com/v1/history.json?key=2746d2000dbe4f92bc7180151240904&q=${selectedLocation}&dt=${formattedDate}&end_dt=${tomorrowFormattedDate}`,
+            fetch(`https://api.weatherapi.com/v1/history.json?key=2746d2000dbe4f92bc7180151240904&q=${selectedLocation}&dt=${formattedDate}&end_dt=${tomorrowFormattedDate}`,
                 {
                     method: "POST"
                 })
@@ -105,7 +106,9 @@ const Start = () => {
                     </div>
                 </div>
                 <div className='px-3 flex flex-col md:flex-row gap-5'>
-                    <div className='md:w-9/12 p-5 border border-slate-400 rounded-3xl bg-zinc-600'><Overview overview={overview} ></Overview></div>
+                    <div className='md:w-9/12 p-5 border border-slate-400 rounded-3xl bg-zinc-600'>
+                        <Overview overview={overview} ></Overview>
+                        </div>
                     <div className='md:w-3/12 border border-slate-400 rounded-3xl bg-zinc-600 p-3'><NextForeCast foreCastDay={forecast?.forecast?.forecastday} degree={degree}></NextForeCast></div>
                 </div>
                 <div className='px-3 flex flex-col md:flex-row gap-5'>
