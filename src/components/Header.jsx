@@ -19,7 +19,7 @@ const Header = ({setLoading, setSelectedLocation, degree, setDegree}) => {
         event.preventDefault()
         setLoading(true)
         const value = event.target.location.value;
-        fetch(`http://api.weatherapi.com/v1/search.json?key=2746d2000dbe4f92bc7180151240904&q=${value}`,{
+        fetch(`https://api.weatherapi.com/v1/search.json?key=2746d2000dbe4f92bc7180151240904&q=${value}`,{
             method: 'GET'
         })
         .then(res=>res.json())
