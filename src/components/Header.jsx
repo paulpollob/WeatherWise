@@ -47,13 +47,13 @@ const Header = ({setLoading, setSelectedLocation, degree, setDegree}) => {
                     <form className='flex' onSubmit={search}><input name='location' className='bg-transparent border-none focus:outline-none w-auto '  type='text' placeholder='Search city or postcode'></input><button className='border border-slate-50 p-2' type='submit'>search</button></form>
                 </div>
 
-                <div className='py-3 bg-zinc-600 rounded-3xl px-3'>
-                    <select className='rounded-3xl  focus:outline-none bg-zinc-600 ' name="lang" id="cars">
+                <div className='py-3 text-center bg-zinc-600 rounded-3xl px-3'>
+                    <select className='rounded-3xl text-center  focus:outline-none bg-zinc-600 ' name="lang" id="cars">
                         <option selected value="Eng">Eng</option>
                         <option value="Bng">Bng</option>
                     </select>
                 </div>
-                <div className='py-3 px-1 bg-zinc-600 rounded-3xl flex'>
+                <div className='py-3 px-1 flex justify-center items-center bg-zinc-600 rounded-3xl'>
                     <div className='relative flex'>
                         <p onClick={()=>setDegree(false)} className={`cursor-pointer z-40  transition-all duration-1000 ${!degree ? 'text-slate-950':'text-slate-300'} py-1 px-2`}>C&deg;</p>
                         <p onClick={()=>setDegree(true)} className={`cursor-pointer z-40  transition-all duration-1000 ${degree ? 'text-slate-950':'text-slate-300'} py-1 px-2`}>F&deg;</p>

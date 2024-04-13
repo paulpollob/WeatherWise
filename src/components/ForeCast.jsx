@@ -28,7 +28,7 @@ const ForeCast = ({ selectedLocation, degree, setDegree, forecast, setForcarst }
                     <small>Wind speed</small>
                 </div>
             </div>
-            <div id='scroll' className='flex flex-col md:flex-row gap-4 p-2 overflow-auto md:overflow-hidden relative z-30'>
+            <div id='scroll' className='flex flex-col md:flex-row gap-4 h-96 md:h-auto p-2 overflow-auto md:overflow-hidden relative z-30'>
                 <button onClick={()=>scroll(-100)} className='invisible md:visible bg-slate-900 p-1 sticky border-1 border-slate-950 shadowd-inner rounded-full shadow-slate-200 text-2xl h-full start-0 top-1/3 hover:border-none focus:outline-none'><IoIosArrowDropleft /></button>
                 {
                     forecast?.forecast?.forecastday[0].hour?.map((d, index) =>
